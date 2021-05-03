@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Catering reservations form</title>
+</head>
+
+<body>
+    <form action="../index.html" method="POST">
+        <fieldset style="width: 180px;">
+            <legend>Personal data</legend>
+            <label for="Name">
+                Name: <br>
+                <input type="text" name="name" required>
+            </label>
+            <label for="email"> <br>
+                Email: <br>
+                <input type="email" name="email">
+            </label>
+            <label for="Phone number"> <br>
+                Phone number: <br>
+                <input type="number" name="phone_number">
+            </label>
+        </fieldset>
+        <fieldset style="width: 180px;">
+            <legend>Location</legend>
+            <label for="City">
+                City: <br>
+                <input type="text" name="City"> <br>
+            </label>
+            <label for="Street">
+                Street: <br>
+                <input type="text" name="Telephone"> <br>
+            </label>
+            <label for="Street number">
+                Street number: <br>
+                <input type="text" name="Street number">
+            </label>
+        </fieldset>
+        <fieldset style="width: 180px;">
+            <legend>Event info</legend>
+            <label for="event">
+                <select name="event" size="1">
+                    <option value="birthday">Birthday</option>
+                    <option value="wedding" selected>Wedding</option>
+                    <option value="company">Company</option>
+                </select>
+            </label>
+            <label for="guests">
+                <p>Select number of guests:</p>
+                <input type="number" name="guests" placeholder="20">
+            </label>
+        </fieldset>
+        <fieldset style="width: 180px;">
+            <legend>Select date</legend>
+            <label for="date">
+                <input type="date" name="date">
+            </label>
+        </fieldset><br>
+        <button type="reset">Reset all fields</button><br>
+        <input type="image" src="../web_design/web_design/submit_button.png" alt="submit">
+    </form>
+</body>

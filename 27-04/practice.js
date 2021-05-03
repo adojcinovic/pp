@@ -8,3 +8,6 @@ var g = 'i don\'t know'
 
 console.log(typeof (a));
 console.log(a);
+
+
+var a = 'desi komarac'

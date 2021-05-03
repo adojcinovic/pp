@@ -51,3 +51,5 @@ var safeSpeed = 'Safe speed:'
 var driveSafely = speed < 120 && speed > 60;
 
 console.log(safeSpeed, driveSafely);
+
+var ra = 'bog sunca'

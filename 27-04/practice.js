@@ -11,3 +11,5 @@ console.log(a);
 
 
 var a = 'desi komarac'
+
+var b = 'blablabla'

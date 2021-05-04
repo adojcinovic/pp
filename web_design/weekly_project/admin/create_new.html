@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Create new Wanted poster</title>
+</head>
+
+<body>
+    <a href="../index.html">Back to home page</a><br><br>
+    <form action="../index.html">
+        <fieldset>
+            <legend>Top headline</legend>
+            <input type="text" name="Headline text:" id="">
+        </fieldset>
+        <fieldset>
+            <legend>Images</legend>
+            <label for="Image1">Image 1</label>
+            <input type="file" name="image"><br><br>
+            <label for="Image 2">Image 2</label>
+            <input type="file" name="image"><br><br>
+            <label for="Image 3">Image 3</label>
+            <input type="file" name="image">
+        </fieldset>
+        <fieldset>
+            <legend>Reward</legend>
+            <label for="reward">Reward money</label>
+            <input type="number" name="money">
+        </fieldset>
+        <fieldset>
+            <legend>Description</legend>
+            <label for="aliases">Aliases:</label><br>
+            <input type="text" name="aliases"><br><br>
+            <label for="birthyear">Birth:</label><br>
+            <input type="date" name="birthyear"><br><br>
+            <label for="hair">Hair:</label><br>
+            <input type="color" name="hair"><br><br>
+            <label for="height">Height:</label><br>
+            <input type="number" name="hair" placeholder="160"><br><br>
+            <label for="weight">Weight:</label><br>
+            <input type="number" name="weight" placeholder="60"><br><br>
+            <label for="sex">Sex:</label><br>
+            <select name="gender" id="">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select><br><br>
+            <label for="id">ID Number:</label><br>
+            <input type="text" name="id"><br><br>
+            <label for="occupation">Occupation:</label><br>
+            <input type="text" name="occupation">
+        </fieldset>
+        <fieldset>
+            <legend>Remarks</legend>
+            <textarea name="remarks" cols="261" rows="10" placeholder="Remarks text"></textarea>
+        </fieldset><br>
+        <fieldset>
+            <legend>Caution</legend>
+            <textarea name="caution" cols="261" rows="10" placeholder="Caution text"></textarea>
+        </fieldset>
+        <p><button type="reset">Reset</button>&nbsp<input type="image" src="../images/submit_button.png" alt="submit"
+                height="20" width="60"></p>
+    </form>
+</body>

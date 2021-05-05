@@ -95,9 +95,9 @@ When you have that working, modify your program to print "FizzBuzz", for numbers
  (and still print "Fizz" or "Buzz" for numbers divisible by only one of those).*/
 
 for (var i = 1; i <= 100; i++) {
-    if (i % 3 === 0 && i % 5 === 0) console.log(i, 'fizzbuzz')
-    else if (i % 3 === 0) console.log(i, 'fizz');
-    else if (i % 5 === 0) console.log(i, 'buzz');
+    // if (i % 3 === 0 && i % 5 === 0) console.log(i, 'fizzbuzz')
+    // else if (i % 3 === 0) console.log(i, 'fizz');
+    // else if (i % 5 === 0) console.log(i, 'buzz');
     // else console.log(i);
 }
 
@@ -112,7 +112,7 @@ var e = 3;
 var a = [5, -4.2, 3, 7];
 var m = []
 for (var i = 0; i < a.length; i++) {
-    if (a[i] === e) console.log('yes');
+    // if (a[i] === e) console.log('yes');
 }
 
 for (var i = 0; i < a.length; i++) {
@@ -124,4 +124,59 @@ for (var i = 0; i < a.length; i++) {
 
 }
 
-console.log(m);
+// console.log(m);
+
+
+/*Write a program that finds the minimum of a given array and prints out its value and index.
+Input array: [4, 2, 2, -1, 6]
+Output: -1, 3
+*/
+
+var arrX = [4, 2, 2, -1, 6]
+var min = Infinity;
+var index;
+for (var i = 0; i < arrX.length; i++) {
+    if (arrX[i] < min) {
+        min = arrX[i]
+        index = i
+    }
+}
+console.log(min, index);
+
+/*Write a program that multiplies every positive element of a given array by 2.
+Input array: [-3, 11, 5, 3.4, -8]
+Output array: [-3, 22, 10, 6.8, -8]
+*/
+
+var arrZ = [-3, 11, 5, 3.4, -8]
+var arrZ1 = []
+for (var i = 0; i < arrZ.length; i++) {
+    if (arrZ[i] > 0) {
+        arrZ1[i] = arrZ[i] * 2
+    } else arrZ1[i] = arrZ[i]
+
+}
+console.log(arrZ1);
+
+
+/*Write a program that finds the first element larger than minimum and prints out its value.
+Input array: [4, 2, 2, -1, 6]
+Output: 2
+*/
+
+var newArr = [4, 2, 2, -1, 6];
+var minNum = Infinity;
+var minNum2 = Infinity;
+for (var i = 0; i < newArr.length; i++) {
+    if (newArr[i] < minNum) {
+        minNum = newArr[i]
+    }
+}
+for (var i = 0; i < newArr.length; i++) {
+    if (newArr[i] < minNum2 && newArr[i] > minNum) {
+        minNum2 = newArr[i]
+    }
+}
+
+console.log(minNum2);
+

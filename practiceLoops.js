@@ -178,23 +178,86 @@ for (var i = 0; i < newArr.length; i++) {
     }
 }
 
-console.log(minNum2);
+// console.log(minNum2);
 
 /*Write a program that checks if a given array is symmetric. An array is symmetric if it can be read the same way both from the left and the right hand side.
 Input array: [2, 4, -2, 7, -2, 4, 2]
 Output: The array is symmetric*/
 
 var symArr = [1, 3, -2, 7, -2, 3, 1];
-var compare1;
-var compare2;
+var compare1 = '';
+var compare2 = '';
 
 for (var i = 0; i < symArr.length; i++) {
-    compare1 = symArr[i]
+    compare1 += symArr[i]
 }
 for (var i = symArr.length - 1; i >= 0; i--) {
-    compare2 = symArr[i]
+    compare2 += symArr[i]
 }
-if (compare1 === compare2) {
-    console.log('symetric');
-} else console.log('not symetric');
+// if (compare1 === compare2) {
+//     console.log('symetric', compare1);
+// } else console.log('asymetric', compare2);
+
+/*Write a program that intertwines two arrays. You can assume the arrays are of the same length. 
+Input arrays: [4, 5, 6, 2], [3, 8, 11, 9]
+Output array: [4, 3, 5, 8, 6, 11, 2, 9]
+*/
+
+var firstArr = [4, 5, 6, 2];
+var secondArr = [3, 8, 11, 9];
+var finalArr = [];
+var c = 0;
+
+for (var i = 0; i < firstArr.length; i++) {
+    finalArr[c] = firstArr[i]
+    c++
+    finalArr[c] = secondArr[i]
+    c++
+}
+
+// console.log(finalArr);
+
+/*Write a program that concatenates two arrays.
+Input arrays: [4, 5, 6, 2], [3, 8, 11, 9]
+Output array: [4, 5, 6, 2, 3, 8, 11, 9]
+*/
+
+var array1 = [4, 5, 6, 2];
+var array2 = [3, 8, 11, 9];
+var concatenated = []
+
+
+for (var i = 0; i < array1.length; i++) {
+    concatenated[i] = array1[i]
+}
+for (var i = 0; i < array2.length; i++) {
+    concatenated[i + array2.length] = array2[i]
+}
+// console.log(concatenated);
+
+/*Write a program that deletes a given element e from the array a. 
+Input: e = 2, a = [4, 6, 2, 8, 2, 2], Output array: [4, 6, 8]
+*/
+
+var ar = [4, 6, 2, 8, 2, 2];
+var e = 2;
+var arNew = [];
+
+for (var i = 0; i < ar.length; i++) {
+    if (ar[i] !== e) {
+        arNew[arNew.length] = ar[i]
+    }
+}
+
+
+console.log(ar);
+console.log(arNew);
+
+/*Write a program that inserts a given element e on the given position p in the array a. If the value of the position is greater than the array length, print the error message.
+Input: e = 78, p = 3, a = [2, -2, 33, 12, 5, 8]
+Output: [2, -2, 33, 78, 12, 5, 8]*/
+
+var toInsert = 78;
+var indexPosition = 3;
+var arr_1 = [2, -2, 33, 12, 5, 8];
 

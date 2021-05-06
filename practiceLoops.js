@@ -180,3 +180,21 @@ for (var i = 0; i < newArr.length; i++) {
 
 console.log(minNum2);
 
+/*Write a program that checks if a given array is symmetric. An array is symmetric if it can be read the same way both from the left and the right hand side.
+Input array: [2, 4, -2, 7, -2, 4, 2]
+Output: The array is symmetric*/
+
+var symArr = [1, 3, -2, 7, -2, 3, 1];
+var compare1;
+var compare2;
+
+for (var i = 0; i < symArr.length; i++) {
+    compare1 = symArr[i]
+}
+for (var i = symArr.length - 1; i >= 0; i--) {
+    compare2 = symArr[i]
+}
+if (compare1 === compare2) {
+    console.log('symetric');
+} else console.log('not symetric');
+

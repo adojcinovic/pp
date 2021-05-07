@@ -66,7 +66,7 @@ function drawSquare(size) {
     var star = ''
     for (var i = 0; i <= size; i++) {
         for (var j = 0; j <= size; j++) {
-            if (i === 0 || i === size || j === 1 || j === size) {
+            if (i === 0 || i === size || j === 0 || j === size) {
                 star += '*';
             } star += ' ';
         } star += '\n'

@@ -141,7 +141,7 @@ for (var i = 0; i < arrX.length; i++) {
         index = i
     }
 }
-console.log(min, index);
+// console.log(min, index);
 
 /*Write a program that multiplies every positive element of a given array by 2.
 Input array: [-3, 11, 5, 3.4, -8]
@@ -156,7 +156,7 @@ for (var i = 0; i < arrZ.length; i++) {
     } else arrZ1[i] = arrZ[i]
 
 }
-console.log(arrZ1);
+// console.log(arrZ1);
 
 
 /*Write a program that finds the first element larger than minimum and prints out its value.
@@ -250,14 +250,22 @@ for (var i = 0; i < ar.length; i++) {
 }
 
 
-console.log(ar);
-console.log(arNew);
+// console.log(ar);
+// console.log(arNew);
 
-/*Write a program that inserts a given element e on the given position p in the array a. If the value of the position is greater than the array length, print the error message.
+/*Write a program that inserts a given element e on the given position p in the array a.
+If the value of the position is greater than the array length, print the error message.
 Input: e = 78, p = 3, a = [2, -2, 33, 12, 5, 8]
 Output: [2, -2, 33, 78, 12, 5, 8]*/
 
-var toInsert = 78;
-var indexPosition = 3;
-var arr_1 = [2, -2, 33, 12, 5, 8];
+var a = [2, -2, 33, 12, 5, 8];
+var e = 78;
+var p = 3;
+var arr_2 = []
 
+for (var i = 0; i < a.length; i++) {
+    if (i === p) {
+        arr_2[arr_2.length] = e;
+    } arr_2[arr_2.length] = a[i]
+}
+console.log(arr_2);

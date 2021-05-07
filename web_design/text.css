@@ -1,0 +1,27 @@
+a:hover{
+    color: brown;
+}
+a:visited{
+    color: black;
+}
+.one {
+    /* text-align: left; */
+    text-decoration: line-through;
+    text-shadow: 2px 2px 2px red;
+}
+.two {
+    text-align: center;
+    text-decoration: overline;
+    text-shadow: 2px 2px 2px yellow;
+}
+.three {
+    text-align: right;
+    text-decoration: underline;
+    text-shadow: 2px 2px 2px green;
+}
+span {
+    text-indent: 30px;
+}
+p:hover span {
+    color: greenyellow;
+}

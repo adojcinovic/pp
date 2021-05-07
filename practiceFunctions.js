@@ -64,17 +64,14 @@ function average(num1, num2, num3, num4) {
 
 function drawSquare(size) {
     var star = ''
-    for (var i = 0; i <= size; i++) {
-        for (var j = 0; j <= size; j++) {
-            if (i === 0 || i === size || j === 0 || j === size) {
+    for (var i = 1; i <= size; i++) {
+        for (var j = 1; j <= size; j++) {
+            if (i === 1 || i === size || j === 1 || j === size) {
                 star += '*';
-            } star += ' ';
-        } star += '\n'
-
-
-
+            } else (star += ' ');
+        } star += ' '
+        star += '\n'
     } console.log(star);
-
-
 }
+
 drawSquare(5)

@@ -62,7 +62,7 @@ function average(num1, num2, num3, num4) {
 *****
 */
 
-function drawSquare(size) {
+function square1(size) {
     var star = ''
     for (var i = 1; i <= size; i++) {
         for (var j = 1; j <= size; j++) {
@@ -74,4 +74,26 @@ function drawSquare(size) {
     } console.log(star);
 }
 
-drawSquare(5)
+// square1(5)
+
+function starsInLine(num) {
+    var line = ''
+    var a = '*'
+    for (var i = 0; i < num; i++) {
+        line += a
+    }
+    return line
+}
+
+function sq(rows) {
+    var str = '';
+    for (var i = 0; i < rows - 1; i++) {
+        str = str += starsInLine(rows) + '\n'
+    }
+    return str
+}
+
+var printSquare = sq;
+// var printSquare2 = sq()
+console.log(printSquare(5));
+// console.log(printSquare2);

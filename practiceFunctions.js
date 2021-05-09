@@ -222,5 +222,89 @@ function checkInput(inp) {
 false -> false
 */
 
+function blankString(string) {
+    if (string === ' ') {
+        return true
+    } else {
+        return false
+    }
+}
+
+// console.log(blankString(' '));
 
 
+//Exercise 3
+/*Write a function that concatenates a given string n times (default is 1).
+	"Ha" -> "Ha"
+    "Ha", 3 -> "HaHaHa"
+*/
+
+function concatString(string, times) {
+    var once = string
+    for (var i = 0; i < times; i++) {
+        once += string
+    } return once
+}
+
+// console.log(concatString('ha', 5));
+
+//Exercise 4
+
+/*Write a function to count the number of letter occurrences in a string.
+"My random string", "n" -> 2 */
+
+function numOfLetter(string, letter) {
+    counter = 0;
+    for (var i = 0; i < string.length; i++) {
+        if (string[i] === letter) {
+            counter++
+        }
+    } return counter
+}
+
+// console.log(numOfLetter('My random aaastring', 'a'));
+
+
+//Exercise 5
+/*Write a function to find the position of the first occurrence of a character in a string.
+The result should be the position of character. If there are no occurrences of the character, the function should return -1.*/
+
+function firstOcc(string, char) {
+    for (var i = 0; i < string.length; i++) {
+        if (string[i] === char) {
+            return i;
+        }
+    } return 'kurcina'
+}
+
+// console.log(firstOcc('aleksandar', 'z'));
+
+//Exercise 6
+/*Write a function to find the position of the last occurrence of a character in a string.
+The result should be in human numeration form. If there are no occurrences of the character,
+function should return -1.*/
+
+
+function lastOcc(string, char) {
+    for (var i = string.length - 1; i >= 0; i--) {
+        if (string[i] === char && i === 1) {
+            return i + 'st'
+        } else if (string[i] === char && i === 2) {
+            return i + 'nd'
+        } else if (string[i] === char && i === 3) {
+            return i + 'rd'
+        } else return i + 'th'
+    } return -1
+}
+
+console.log(lastOcc('aa', 'a'));
+
+
+//Page 3
+
+//Exercise 1
+
+/*Write a program to insert a string within a string at a particular position (default is 1, beginning of a string).
+
+"My random string", "JS " -> "JS My random string"
+"My random string", "JS ", 10 -> "My random JS string" */

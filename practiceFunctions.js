@@ -98,6 +98,8 @@ var printSquare = sq;
 // console.log(printSquare(5));
 // console.log(printSquare2);
 
+//Exercise 6
+
 /* Write a program that draws a horizontal chart representing three given values. For example, if values are 5, 3, and 7, the program should draw:
 * * * * *
 * * *
@@ -109,4 +111,114 @@ function drawLines(x, y, z) {
     return a
 }
 
-console.log(drawLines(3, 5, 11));
+// console.log(drawLines(3, 5, 11));
+
+//Exercise 7
+
+//Write a program that calculates a number of digits of a given number. 
+
+function calcDigitsNum(number) {
+    str = ''
+    str = (str + number).length
+    return str
+
+}
+// console.log(calcDigitsNum(9999));
+
+//Exercise 8
+
+/*Write a program that calculates a number of appearances of a given number in a given array.
+Inputs: a = [2, 4, 7, 8, 7, 7, 1], e = 7
+Result: 3 */
+
+
+var a = [2, 4, 7, 8, 8, 7, 7, 1];
+var e = 8;
+
+
+function calcApp(arr, num) {
+    var numOfApp = 0;
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] === num) {
+            numOfApp++
+        }
+    } return numOfApp
+}
+
+// console.log(calcApp(a, e));
+
+// Exercise 9
+/* Write a program that calculates the sum of odd elements of a given array. */
+
+function sumOfOdd(array) {
+    var sum = 0
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] % 2 === 1) {
+            sum += array[i]
+        }
+    } return sum
+}
+
+// console.log(sumOfOdd(a));
+
+// Exercise 10
+
+/* Write a program that calculates the number of appearances of a letter a in a given string.
+Modify the program so it calculates the number of both letters a and A.*/
+
+function numOfAppLetter(string) {
+    var a = 'a'
+    var a1 = 'A'
+    var c = 0;
+    for (var i = 0; i < string.length; i++) {
+        if (string[i] === a || string[i] === a1) {
+            c++
+        }
+    } return c
+}
+
+// console.log(numOfAppLetter('AAAaaa'))
+
+//Exercise 11
+/*Write a program that concatenates a given string given number of times. For example, 
+if “abc” and 4 are given values, the program prints out abcabcabcabc. */
+
+function concat(str1, num_of_times) {
+    var str2 = ''
+    for (var i = 0; i < num_of_times; i++) {
+        str2 += str1
+    } return str2
+}
+
+// console.log(concat('zoran ', 4));
+
+//Page 2
+//Exercise 1
+/*Write a function to check whether the `input` is a string or not.
+
+"My random string" -> true
+12 -> false
+*/
+
+var input = 4;
+
+function checkInput(inp) {
+    if (typeof inp === 'string') {
+        return inp
+    } else {
+        return 'Not a string'
+    }
+}
+
+// console.log(checkInput(input));
+
+
+//Exercise 2
+/*Write a function to check whether a string is blank or not.
+
+"My random string" -> false
+" " -> true
+12 -> false
+false -> false
+*/
+

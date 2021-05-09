@@ -95,5 +95,18 @@ function sq(rows) {
 
 var printSquare = sq;
 // var printSquare2 = sq()
-console.log(printSquare(5));
+// console.log(printSquare(5));
 // console.log(printSquare2);
+
+/* Write a program that draws a horizontal chart representing three given values. For example, if values are 5, 3, and 7, the program should draw:
+* * * * *
+* * *
+* * * * * * */
+
+
+function drawLines(x, y, z) {
+    var a = starsInLine(x) + '\n' + starsInLine(y) + '\n' + starsInLine(z) + '\n'
+    return a
+}
+
+console.log(drawLines(3, 5, 11));

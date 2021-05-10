@@ -297,7 +297,71 @@ function lastOcc(string, char) {
     } return -1
 }
 
-console.log(lastOcc('aa', 'a'));
+// console.log(lastOcc('aaa', 'a'));
+
+
+//Exercise 7
+/*Write a function to convert string into an array. Space in a string should be represented as “null” in new array.
+"My random string" -> ["M", "y", null, "r", "a"]
+"Random" -> ["R", "a", "n", "d", "o", "m"]*/
+
+function stringIntoArray(string) {
+    var newArray = []
+    for (var i = 0; i < string.length; i++) {
+        if (string[i] === ' ') {
+            newArray[i] = 'null'
+        } else {
+            newArray[newArray.length] = string[i]
+        }
+    } return newArray
+}
+
+// console.log(stringIntoArray('My random string'));
+
+//Exercise 8
+
+/*Write a function that accepts a number as a parameter and checks if the number is prime or not.
+Note: A prime number (or a prime) is a natural number greater than 1 that has no positive divisors other than 1 and itself.*/
+
+function primeNum(num) {
+    if (num === 2 || num % 2 === 1) {
+        return num
+    } else {
+        return 'not a prime number'
+    }
+}
+
+// console.log(primeNum(2));
+
+//Exercise 9
+
+/*Write a function that replaces spaces in a string with provided separator. 
+If separator is not provided, use “-” (dash) as the default separator.
+
+    "My random string", "_" -> "My_random_string"
+    "My random string", "+" -> "My+random+string"
+    "My random string" -> "My-random-string"
+*/
+
+function spaceReplace(string, separator) {
+    var newStr = ''
+    for (var i = 0; i < string.length; i++) {
+        if (separator === undefined) {
+            if (string[i] === ' ') {
+                newStr = newStr + '-'
+            } newStr += string[i]
+        } else {
+            if (string[i] === ' ') {
+                newStr[newStr.length] = separator
+            }
+        }
+    } return newStr
+}
+
+console.log(spaceReplace('My random string'));
+
+
+
 
 
 //Page 3

@@ -1,5 +1,5 @@
 // function exercises
-
+//Page 1
 //exercise 1
 /*Write a program that calculates the maximum of two given numbers. 
 A = 5 b = 6 output: 6
@@ -36,10 +36,7 @@ function odd(a) {
 /*Write a program that checks if a given number is a three digit long number*/
 
 function threeDigit(num) {
-    if (num >= 100) {
-        console.log('given number is 3 digits long');
-
-    }
+    return (num >= 100 && num < 1000)
 }
 // threeDigit(10)
 
@@ -235,7 +232,7 @@ function blankString(string) {
 
 //Exercise 3
 /*Write a function that concatenates a given string n times (default is 1).
-	"Ha" -> "Ha"
+    "Ha" -> "Ha"
     "Ha", 3 -> "HaHaHa"
 */
 
@@ -348,18 +345,21 @@ function spaceReplace(string, separator) {
     for (var i = 0; i < string.length; i++) {
         if (separator === undefined) {
             if (string[i] === ' ') {
-                newStr = newStr + '-'
-            } newStr += string[i]
+                newStr += '-'
+            } else newStr += string[i]
         } else {
             if (string[i] === ' ') {
-                newStr[newStr.length] = separator
-            }
+                newStr += separator
+            } else newStr += string[i]
         }
     } return newStr
 }
 
-console.log(spaceReplace('My random string'));
+console.log(spaceReplace('My random string', '---'));
 
+
+//Exercise 10
+/*Write a function to get the first n characters and add “...” at the end of newly created string.*/
 
 
 

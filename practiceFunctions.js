@@ -355,11 +355,49 @@ function spaceReplace(string, separator) {
     } return newStr
 }
 
-console.log(spaceReplace('My random string', '---'));
+// console.log(spaceReplace('My random string', '---'));
 
 
 //Exercise 10
 /*Write a function to get the first n characters and add “...” at the end of newly created string.*/
+
+function addChar(string, num) {
+    var newStr = ''
+    for (var i = 0; i < string.length; i++) {
+        if (i === num) {
+            newStr += '...'
+            return newStr
+        } newStr += string[i]
+    } return newStr
+}
+
+// console.log(addChar('dojcinovic', 5));
+
+
+//Exercise 11
+/* Write a function that converts an array of strings into an array of numbers. Filter out all non-numeric values.
+["1", "21", undefined, "42", "1e+3", Infinity] -> [1, 21, 42, 1000]*/
+
+function arrConverter(array) {
+    newArr = []
+    for (var i = 0; i < array.length; i++) {
+        if (typeof array[i] === 'string') {
+            newArr[newArr.length] = Number(array[i])
+        }
+    } return newArr
+}
+console.log(arrConverter(["1", "21", undefined, "42", "1e+3", Infinity]));
+
+
+//Exercise 12
+/*Write a function to calculate how many years there are left until retirement based on the year of birth. 
+Retirement for men is at age of 65 and for women at age of 60. 
+If someone is already retired, a proper message should be displayed.*/
+
+function retirement(birthYear, gender) {
+    var currentYear = 2021
+    if (gender === 'men' && currentYear - birthYear >= 65)
+}
 
 
 
@@ -371,3 +409,29 @@ console.log(spaceReplace('My random string', '---'));
 
 "My random string", "JS " -> "JS My random string"
 "My random string", "JS ", 10 -> "My random JS string" */
+
+
+
+//Exercise 8
+
+/*Write a function to find a word within a string.
+
+'The quick brown fox', 'fox' -> "'fox' was found 1 times"
+'aa bb cc dd aa', 'aa' -> "'aa' was found 2 times"*/
+
+
+function findAWord(string, word) {
+    var newArr = []
+    var space = ' '
+    for (var i = 0; i < string.length; i++) {
+        var toInsert = ''
+        if (string[i] === space) {
+            newArr[newArr.length]
+            continue
+        } else {
+            toInsert += string[i]
+        }
+    } return toInsert
+}
+
+console.log(findAWord('The quick brown fox'));

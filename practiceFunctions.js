@@ -418,32 +418,21 @@ function retirement(birthYear, gender) {
 
 
 function humanizeNumber(number) {
-    var string = number
-    for (var i = 0; i < number.length; i++) {
-        if (string[string.length] === 1 && string[string.length - 1] === 1) {
-            string += 'st'
-        }
-    } return string
+    var string = "" + number;
+    if (string[string.length - 2] === '1' && (string[string.length - 1] === '1' || string[string.length - 1] === '2'
+        || string[string.length - 1] === '3')) {
+        return string = string + 'th'
+    } else if (string[string.length - 1] === '1') {
+        return string = string + 'st'
+    } else if (string[string.length - 1] === '2') {
+        return string = string + 'nd'
+    } else if (string[string.length - 1] === '3') {
+        return string = string + 'rd'
+    } else return string = string + 'th'
 }
-var numberFive = '55555'
-console.log(numberFive[numberFive.length]);
-console.log(humanizeNumber(11111));
+console.log(humanizeNumber(1));
 
 
-
-
-// {
-//     for (var i = string.length; i >= 0; i--) {
-//         if ()
-//             if (number[i] && i === 1) {
-//                 return i + 'st'
-//             } else if (number[i] && i === 2) {
-//                 return i + 'nd'
-//             } else if (number[i] && i === 3) {
-//                 return i + 'rd'
-//             } else return i + 'th'
-//     } return -1
-// }
 //Page 3
 
 //Exercise 1

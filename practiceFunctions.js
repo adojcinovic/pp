@@ -115,9 +115,7 @@ function drawLines(x, y, z) {
 //Write a program that calculates a number of digits of a given number. 
 
 function calcDigitsNum(number) {
-    str = ''
-    str = (str + number).length
-    return str
+    return ('' + number).length
 
 }
 // console.log(calcDigitsNum(9999));
@@ -164,11 +162,9 @@ function sumOfOdd(array) {
 Modify the program so it calculates the number of both letters a and A.*/
 
 function numOfAppLetter(string) {
-    var a = 'a'
-    var a1 = 'A'
     var c = 0;
     for (var i = 0; i < string.length; i++) {
-        if (string[i] === a || string[i] === a1) {
+        if (string[i] === 'a' || string[i] === 'A') {
             c++
         }
     } return c
@@ -220,7 +216,7 @@ false -> false
 */
 
 function blankString(string) {
-    if (string === ' ') {
+    if (typeof string === 'string' && string.length > 0) {
         return true
     } else {
         return false
@@ -283,7 +279,7 @@ function should return -1.*/
 
 
 function lastOcc(string, char) {
-    for (var i = string.length - 1; i >= 0; i--) {
+    for (var i = string.length; i >= 0; i--) {
         if (string[i] === char && i === 1) {
             return i + 'st'
         } else if (string[i] === char && i === 2) {
@@ -294,7 +290,7 @@ function lastOcc(string, char) {
     } return -1
 }
 
-// console.log(lastOcc('aaa', 'a'));
+console.log(lastOcc('limanada', 'a'));
 
 
 //Exercise 7
@@ -386,7 +382,7 @@ function arrConverter(array) {
         }
     } return newArr
 }
-console.log(arrConverter(["1", "21", undefined, "42", "1e+3", Infinity]));
+// console.log(arrConverter(["1", "21", undefined, "42", "1e+3", Infinity]));
 
 
 //Exercise 12
@@ -396,8 +392,32 @@ If someone is already retired, a proper message should be displayed.*/
 
 function retirement(birthYear, gender) {
     var currentYear = 2021
-    if (gender === 'men' && currentYear - birthYear >= 65)
+    if (gender === 'man' && currentYear - birthYear >= 65) {
+        return gender + ' already retired'
+    } else if
+        (gender === 'man' && currentYear - birthYear < 65) {
+        return 65 - (currentYear - birthYear) + ' years left'
+    } else if
+        (gender === 'woman' && currentYear - birthYear >= 60) {
+        return gender + ' already retired'
+    } else if (gender === 'woman' && currentYear - birthYear < 60) {
+        return 60 - (currentYear - birthYear) + ' years left'
+    }
 }
+
+
+// console.log(retirement(1995, 'man'));
+
+
+//Exercise 13
+
+/*Write a function to humanize a number (formats a number to a human-readable string) with the correct suffix such as 1st, 2nd, 3rd or 4th.
+1 -> 1st
+11 -> 11th
+*/
+
+// function humanizeNumber
+
 
 
 
@@ -420,18 +440,5 @@ function retirement(birthYear, gender) {
 'aa bb cc dd aa', 'aa' -> "'aa' was found 2 times"*/
 
 
-function findAWord(string, word) {
-    var newArr = []
-    var space = ' '
-    for (var i = 0; i < string.length; i++) {
-        var toInsert = ''
-        if (string[i] === space) {
-            newArr[newArr.length]
-            continue
-        } else {
-            toInsert += string[i]
-        }
-    } return toInsert
-}
+// console.log(findAWord('The quick brown fox'));
 
-console.log(findAWord('The quick brown fox'));

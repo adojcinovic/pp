@@ -421,16 +421,16 @@ function humanizeNumber(number) {
     var string = "" + number;
     if (string[string.length - 2] === '1' && (string[string.length - 1] === '1' || string[string.length - 1] === '2'
         || string[string.length - 1] === '3')) {
-        return string = string + 'th'
+        return string += 'th'
     } else if (string[string.length - 1] === '1') {
-        return string = string + 'st'
+        return string += 'st'
     } else if (string[string.length - 1] === '2') {
-        return string = string + 'nd'
+        return string += 'nd'
     } else if (string[string.length - 1] === '3') {
-        return string = string + 'rd'
-    } else return string = string + 'th'
+        return string += 'rd'
+    } else return string += 'th'
 }
-console.log(humanizeNumber(1));
+console.log(humanizeNumber(1123));
 
 
 //Page 3
@@ -441,6 +441,22 @@ console.log(humanizeNumber(1));
 
 "My random string", "JS " -> "JS My random string"
 "My random string", "JS ", 10 -> "My random JS string" */
+
+function insertString(string, stringToInsert, position) {
+    var newString = ''
+    if (position === undefined || position >= string.length) {
+        newString = stringToInsert + ' ' + string
+    }
+    else {
+        for (var i = 0; i < string.length; i++) {
+            if (i === position) {
+                newString += ' ' + stringToInsert + ' '
+            } newString += string[i]
+        }
+    } return newString
+
+}
+console.log(insertString('My random string', 'JS', 16));
 
 
 

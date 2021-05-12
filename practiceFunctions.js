@@ -302,7 +302,7 @@ function stringIntoArray(string) {
     var newArray = []
     for (var i = 0; i < string.length; i++) {
         if (string[i] === ' ') {
-            newArray[i] = 'null'
+            newArray[i] = null
         } else {
             newArray[newArray.length] = string[i]
         }
@@ -317,14 +317,16 @@ function stringIntoArray(string) {
 Note: A prime number (or a prime) is a natural number greater than 1 that has no positive divisors other than 1 and itself.*/
 
 function primeNum(num) {
-    if (num === 2 || num % 2 === 1) {
+    if (typeof num !== 'number') {
+        return false
+    } else if (num <= 1) {
+        return false
+    } else if (num === 2 || num % 2 === 1) {
         return num
-    } else {
-        return 'not a prime number'
-    }
+    } else return false
 }
 
-// console.log(primeNum(2));
+console.log(primeNum(1230));
 
 //Exercise 9
 
@@ -367,7 +369,7 @@ function addChar(string, num) {
     } return newStr
 }
 
-// console.log(addChar('dojcinovic', 5));
+console.log(addChar('dojcinovic', 5));
 
 
 //Exercise 11
@@ -377,12 +379,16 @@ function addChar(string, num) {
 function arrConverter(array) {
     newArr = []
     for (var i = 0; i < array.length; i++) {
-        if (typeof array[i] === 'string') {
-            newArr[newArr.length] = Number(array[i])
+        var c = array[i] * 1
+        if (c !== c || c === -Infinity || c === Infinity) {
+            continue
+        }
+        else {
+            newArr[newArr.length] = c
         }
     } return newArr
 }
-// console.log(arrConverter(["1", "21", undefined, "42", "1e+3", Infinity]));
+console.log(arrConverter(["1", "21", undefined, "42", "1e+3", "aaaa", Infinity]));
 
 
 //Exercise 12
@@ -404,7 +410,6 @@ function retirement(birthYear, gender) {
         return 60 - (currentYear - birthYear) + ' years left'
     }
 }
-
 
 // console.log(retirement(1995, 'man'));
 
@@ -430,7 +435,7 @@ function humanizeNumber(number) {
         return string += 'rd'
     } else return string += 'th'
 }
-console.log(humanizeNumber(1123));
+// console.log(humanizeNumber(1123));
 
 
 //Page 3
@@ -456,7 +461,7 @@ function insertString(string, stringToInsert, position) {
     } return newString
 
 }
-console.log(insertString('My random string', 'JS', 16));
+// console.log(insertString('My random string', 'JS', 16));
 
 
 
@@ -470,3 +475,4 @@ console.log(insertString('My random string', 'JS', 16));
 
 // console.log(findAWord('The quick brown fox'));
 
+console.log(2 < 3 + 5);

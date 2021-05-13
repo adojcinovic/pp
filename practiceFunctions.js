@@ -590,10 +590,91 @@ function wordInString(string, word) {
 }
 
 
-console.log(wordInString('aa bb cc dd aa', 'aa'));
+// console.log(wordInString('aa bb aa cc dd aa', 'aa'));
+
+// console.log(3 > 5 < 10);
 
 
 
-/*Write a program to join all elements of the array into a string skipping elements that are undefined, null, NaN or Infinity.
+//Exercise 9
 
-[NaN, 0, 15, false, -22, '', undefined, 47, null]*/
+/*Write a function to hide email address.
+
+"myemailaddress@bgit.rs" -> "mye...@bgit.rs" */
+
+
+//Page 5
+
+//Exercise 1
+/*Find the min and max element in the following array and switch their places. Print out the modified array in the console.
+Input:  [ 3, 500, 12, 149, 53, 414, 1, 19 ]
+Output: [ 3, 1, 12, 149, 53, 414, 500, 19 ] */
+
+var test = [3, 500, 12, 149, 53, 414, 1, 19];
+
+function minMax(arr) {
+    var output = []
+    var max = -Infinity;
+    var min = Infinity
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] > max) max = arr[i]
+        if (arr[i] < min) min = arr[i]
+    } for (var i = 0; i < arr.length; i++) {
+        if (arr[i] === max) {
+            output[output.length] = min
+        } else if (arr[i] === min) {
+            output[output.length] = max
+        } else {
+            output[output.length] = arr[i]
+        }
+    } return output
+}
+
+// console.log(minMax(test));
+
+//Exercise 2
+/*Use the following array to make a new one by dividing its values by two and adding 5. 
+If a given element's value is 0, change it to 20.
+Input:  [ 3, 500, -10, 149, 53, 414, 1, 19 ]
+Output: [ 6.5, 255, 20, 79.5, 31.5, 212, 5.5, 14.5 ] */
+
+var arrayToTest = ['igor', 3, 500, -10, 149, 53, 414, 1, 19];
+
+function divider(arr) {
+    var output = []
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] / 2 + 5 === 0) {
+            output[output.length] = 20
+        } else {
+            output[output.length] = arr[i] / 2 + 5
+        }
+    } return output
+}
+
+// console.log(divider(arrayToTest));
+
+
+//Exercise 6
+/*Write a program that uses a loop to add all the even numbers from 1 to 1000,
+ and subtracts all the odd numbers 1 to 500 from the calculated sum. 
+The result should then be multiplied by 12.5 and displayed in console.
+Output: 2350000
+*/
+
+function addNumbers() {
+    var even = 0
+    var odd = 0
+    for (var i = 0; i <= 1000; i++) {
+        if (i % 2 === 0) {
+            even += i
+        }
+    } for (var i = 0; i <= 500; i++) {
+        if (i % 2 === 1) {
+            odd += i
+        }
+    } return (even - odd) * 12.5
+}
+
+console.log(addNumbers());
+
+console.log(arrayToTest[0][0]);

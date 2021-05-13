@@ -326,7 +326,7 @@ function primeNum(num) {
     } else return false
 }
 
-console.log(primeNum(1230));
+// console.log(primeNum(1230));
 
 //Exercise 9
 
@@ -369,7 +369,7 @@ function addChar(string, num) {
     } return newStr
 }
 
-console.log(addChar('dojcinovic', 5));
+// console.log(addChar('dojcinovic', 5));
 
 
 //Exercise 11
@@ -388,7 +388,7 @@ function arrConverter(array) {
         }
     } return newArr
 }
-console.log(arrConverter(["1", "21", undefined, "42", "1e+3", "aaaa", Infinity]));
+// console.log(arrConverter(["1", "21", undefined, "42", "1e+3", "aaaa", Infinity]));
 
 
 //Exercise 12
@@ -464,6 +464,56 @@ function insertString(string, stringToInsert, position) {
 // console.log(insertString('My random string', 'JS', 16));
 
 
+//Exercise 2
+/*Write a program to join all elements of the array into a string skipping elements that are undefined, null, NaN or Infinity.*/
+
+var originalArray = [NaN, 0, 15, false, -22, 'kurcina', undefined, 47, null];
+
+function joinElements(array) {
+    var string = ''
+    for (var i = 0; i < array.length; i++) {
+        if ((typeof array[i] === 'number' || typeof array[i] === 'string') && array[i] === array[i]) {
+            string += array[i] + ' '
+        }
+    } return string
+}
+
+// console.log(joinElements(originalArray));
+// console.log(originalArray[0] === originalArray[0]);
+
+
+
+//Exercise 3
+/*Write a program to filter out falsy values from the array.*/
+
+var testArray = [NaN, 0, 15, false, -22, '', undefined, 47, null] /* [15, -22, 47]*/
+
+function filterFalsy(array) {
+    var newArr = []
+    for (var i = 0; i < array.length; i++) {
+        if (array[i]) newArr[newArr.length] = array[i]
+    } return newArr
+}
+
+console.log(filterFalsy(testArray));
+
+//Exercise 4
+
+/*Write a function that reverses a number. The result must be a number.
+
+12345 -> 54321 // Output must be a number*/
+var numberToCheck = 12345
+
+function reverseNum(num) {
+    var reversed = '' + num;
+    var reversed2 = ''
+    for (var i = reversed.length - 1; i >= 0; i--) {
+        reversed2 += reversed[i]
+    } return Number(reversed2);
+}
+
+
+console.log(reverseNum(987654321));
 
 //Exercise 8
 
@@ -475,4 +525,8 @@ function insertString(string, stringToInsert, position) {
 
 // console.log(findAWord('The quick brown fox'));
 
-console.log(2 < 3 + 5);
+
+
+/*Write a program to join all elements of the array into a string skipping elements that are undefined, null, NaN or Infinity.
+
+[NaN, 0, 15, false, -22, '', undefined, 47, null]*/

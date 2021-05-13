@@ -467,14 +467,13 @@ function insertString(string, stringToInsert, position) {
 //Exercise 2
 /*Write a program to join all elements of the array into a string skipping elements that are undefined, null, NaN or Infinity.*/
 
-var originalArray = [NaN, 0, 15, false, -22, 'kurcina', undefined, 47, null];
+var originalArray = [NaN, 0, 15, false, -22, 'blabla', undefined, 47, null, Infinity];
 
 function joinElements(array) {
     var string = ''
     for (var i = 0; i < array.length; i++) {
-        if ((typeof array[i] === 'number' || typeof array[i] === 'string') && array[i] === array[i]) {
-            string += array[i] + ' '
-        }
+        if (array[i] === null || array[i] === undefined || array[i] === Infinity || array[i] !== array[i]) continue
+        string += array[i] + ' '
     } return string
 }
 
@@ -495,7 +494,7 @@ function filterFalsy(array) {
     } return newArr
 }
 
-console.log(filterFalsy(testArray));
+// console.log(filterFalsy(testArray));
 
 //Exercise 4
 
@@ -513,7 +512,60 @@ function reverseNum(num) {
 }
 
 
-console.log(reverseNum(987654321));
+// console.log(reverseNum(987654321));
+// console.log(0 || null && 5 || 6);
+
+//Exercise 5
+
+/*Write a function to get the last element of an array. Passing a parameter 'n' will return the last 'n' elements of the array.
+
+[7, 9, 0, -2] -> -2
+[7, 9, 0, -2], 2 -> [0, -2] */
+
+function lastNElement(array, n) {
+    var newArr = []
+    for (var i = array.length - n; i < array.length; i++) {
+        newArr[newArr.length] = array[i]
+    } return newArr
+}
+
+// console.log(lastNElement([7, 9, 0, -2, 10, true, false, 'deeeesi'], 4));
+
+
+//Exercise 6
+/*Write a function to create a specified number of elements with pre-filled numeric value array.
+
+6, 0 -> [0, 0, 0, 0, 0, 0]
+2, "none" -> ["none", "none"]
+2 -> [null, null] */
+
+function createArray(numOfTimes, value) {
+    var newArr = []
+    for (var i = 0; i < numOfTimes; i++) {
+        newArr[newArr.length] = value
+    } return newArr
+}
+
+// console.log(createArray(3, 'Nikola Skejdz'));
+
+
+//Exercise 7
+/*Write a function that says whether a number is perfect.
+
+28 -> 28 is a perfect number.*/
+
+function perfectNum(num) {
+    var number = 0;
+    for (var i = 1; i <= num / 2; i++)
+        if (num % i === 0) {
+            number += i
+        }
+    if (number === num) {
+        return num + ' is a perfect number'
+    } else return num + ' is NOT a perfect number'
+}
+
+// console.log(perfectNum(300));
 
 //Exercise 8
 
@@ -523,7 +575,22 @@ console.log(reverseNum(987654321));
 'aa bb cc dd aa', 'aa' -> "'aa' was found 2 times"*/
 
 
-// console.log(findAWord('The quick brown fox'));
+function wordInString(string, word) {
+    var count = 0
+    var searchIndex = 0
+    for (var i = 0; i < string.length; i++) {
+        if (string[i] === word[searchIndex]) {
+            searchIndex++
+            if (searchIndex === word.length) {
+                searchIndex = 0
+                count++
+            }
+        }
+    } return 'word ' + word + ' was found ' + count + ' times'
+}
+
+
+console.log(wordInString('aa bb cc dd aa', 'aa'));
 
 
 

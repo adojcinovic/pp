@@ -606,7 +606,6 @@ function wordInString(string, word) {
 var ad = 'myemailaddraaess@bgit.rs'
 
 function findEmail(email, shortener) {
-    var monkey = '@'
     var at = ''
     var hiddenEmail = ''
     for (var i = 0; i < email.length; i++) {

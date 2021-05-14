@@ -603,6 +603,25 @@ function wordInString(string, word) {
 "myemailaddress@bgit.rs" -> "mye...@bgit.rs" */
 
 
+var ad = 'myemailaddraaess@bgit.rs'
+
+function findEmail(email, shortener) {
+    var monkey = '@'
+    var at = ''
+    var hiddenEmail = ''
+    for (var i = 0; i < email.length; i++) {
+        if (email[i] === '@') {
+            for (var j = i; j < email.length; j++) {
+                hiddenEmail += email[j]
+            }
+        } else if (i < shortener) {
+            at += email[i]
+        }
+    } return at + '...' + hiddenEmail
+}
+console.log(findEmail('myemailaddress@bgit.rs', 3));
+
+
 //Page 5
 
 //Exercise 1

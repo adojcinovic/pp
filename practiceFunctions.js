@@ -606,20 +606,48 @@ function wordInString(string, word) {
 var ad = 'myemailaddraaess@bgit.rs'
 
 function findEmail(email, shortener) {
-    var at = ''
-    var hiddenEmail = ''
+    var firstChars = ''
+    var emailSufix = ''
     for (var i = 0; i < email.length; i++) {
         if (email[i] === '@') {
             for (var j = i; j < email.length; j++) {
-                hiddenEmail += email[j]
+                emailSufix += email[j]
             }
         } else if (i < shortener) {
-            at += email[i]
+            firstChars += email[i]
         }
-    } return at + '...' + hiddenEmail
+    } return firstChars + '...' + emailSufix
 }
-console.log(findEmail('myemailaddress@bgit.rs', 3));
+// console.log(findEmail('adojcinovic@gmail.rs', 3));
 
+
+// Exercise 10
+
+/*Write a program to find the most frequent item of an array.
+
+[3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3] */
+
+var arrToCheck = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3]
+
+function checkArr(array) {
+    var maxFrequency = 0
+    var maxElement = ''
+    var counter = 0
+    for (var i = 0; i < array.length; i++) {
+        for (var j = i; j < array.length; j++) {
+            if (array[j] === array[i]) {
+                counter++
+            }
+        }
+        if (counter > maxFrequency) {
+            maxFrequency = counter
+            maxElement = array[i]
+        }
+        counter = 0
+    } return maxFrequency
+}
+
+console.log(checkArr(arrToCheck));
 
 //Page 5
 
@@ -631,7 +659,6 @@ Output: [ 3, 1, 12, 149, 53, 414, 500, 19 ] */
 var test = [3, 500, 12, 149, 53, 414, 1, 19];
 
 function minMax(arr) {
-    var output = []
     var max = -Infinity;
     var min = Infinity
     for (var i = 0; i < arr.length; i++) {
@@ -639,16 +666,14 @@ function minMax(arr) {
         if (arr[i] < min) min = arr[i]
     } for (var i = 0; i < arr.length; i++) {
         if (arr[i] === max) {
-            output[output.length] = min
+            arr[i] = min
         } else if (arr[i] === min) {
-            output[output.length] = max
-        } else {
-            output[output.length] = arr[i]
+            arr[i] = max
         }
-    } return output
+    } return arr
 }
 
-// console.log(minMax(test));
+console.log(minMax(test));
 
 //Exercise 2
 /*Use the following array to make a new one by dividing its values by two and adding 5. 
@@ -693,6 +718,4 @@ function addNumbers() {
     } return (even - odd) * 12.5
 }
 
-console.log(addNumbers());
-
-console.log(arrayToTest[0][0]);
+// console.log(addNumbers());

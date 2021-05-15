@@ -326,7 +326,7 @@ function primeNum(num) {
     } else return false
 }
 
-// console.log(primeNum(1230));
+// console.log(primeNum(17));
 
 //Exercise 9
 
@@ -620,6 +620,25 @@ function findEmail(email, shortener) {
 }
 // console.log(findEmail('adojcinovic@gmail.rs', 3));
 
+// Exercise 9 with flag concept implementation
+
+
+function findEmail2(email) {
+    var shortEmail = '';
+    var shouldCopy = true;
+    for (var i = 0; i < email.length; i++) {
+        if (i === 3) {
+            shouldCopy = false
+            shortEmail += '...'
+        } if (email[i] === '@') {
+            shouldCopy = true
+        } if (shouldCopy) {
+            shortEmail += email[i]
+        }
+    } return shortEmail
+}
+
+// console.log(findEmail2(ad));
 
 // Exercise 10
 
@@ -629,25 +648,25 @@ function findEmail(email, shortener) {
 
 var arrToCheck = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3]
 
-function checkArr(array) {
-    var maxFrequency = 0
-    var maxElement = ''
+function frequency(array) {
+    var maxChar = '';
+    var maxFreq = 0;
     var counter = 0
     for (var i = 0; i < array.length; i++) {
         for (var j = i; j < array.length; j++) {
             if (array[j] === array[i]) {
                 counter++
             }
-        }
-        if (counter > maxFrequency) {
-            maxFrequency = counter
-            maxElement = array[i]
+        } if (counter > maxFreq) {
+            maxFreq = counter
+            maxChar = array[i]
         }
         counter = 0
-    } return maxFrequency
+    } return maxFreq + maxChar
 }
 
-console.log(checkArr(arrToCheck));
+
+// console.log(frequency(arrToCheck));
 
 //Page 5
 
@@ -673,7 +692,7 @@ function minMax(arr) {
     } return arr
 }
 
-console.log(minMax(test));
+// console.log(minMax(test));
 
 //Exercise 2
 /*Use the following array to make a new one by dividing its values by two and adding 5. 
@@ -681,7 +700,7 @@ If a given element's value is 0, change it to 20.
 Input:  [ 3, 500, -10, 149, 53, 414, 1, 19 ]
 Output: [ 6.5, 255, 20, 79.5, 31.5, 212, 5.5, 14.5 ] */
 
-var arrayToTest = ['igor', 3, 500, -10, 149, 53, 414, 1, 19];
+var arrayToTest = [2, 3, 500, -10, 149, 53, 414, 1, 19];
 
 function divider(arr) {
     var output = []
@@ -719,3 +738,80 @@ function addNumbers() {
 }
 
 // console.log(addNumbers());
+
+//Exercise 7
+
+/*Define a 10 element array. Take the first two letters from every string (that has at least 2 letters) 
+in the array and create a new string from them. Print it out in the console.
+Input: [ "M", "Anne", 12, "Steve", "Joe", "John", "David", "Mark", true, "A" ]*/
+
+var array1000 = ["M", "Anne", 12, "Steve", "Joe", "John", "David", "Mark", true, "A"];
+
+// console.log(array1000[1][0]);
+
+function twoLetters(array) {
+    var newString = '';
+    for (var i = 0; i < array.length; i++) {
+        if (array[i].length > 2) {
+            newString += array[i][0] + array[i][1]
+        }
+    } return newString
+}
+
+// console.log(twoLetters(array1000));
+
+
+
+//Exercise 8
+
+/*Write a program that takes a string and prints its characters out in reversed order in the console.
+Input:  Belgrade Institute of Technology
+Output: ygolonhceT fo etutitsnI edargleB */
+
+function reversingString(string) {
+    var reversedString = ''
+    for (var i = string.length - 1; i >= 0; i--) {
+        reversedString += string[i]
+    } return reversedString
+}
+
+// console.log(reversingString('Belgrade Institute of Technology'));
+
+
+//Exercise 9
+/*Write a program that displays all the combinations of two numbers between 1 and 7.
+Don't display two of the same numbers at the same time. Display the number of possible combinations, as well.
+(E.g. (1.2),(2,1) is allowed, but not (1,1), (2,2)...). */
+
+
+function numComb(num1, num2) { //num2 arg has to be bigger for function to work
+    if (num1 >= num2) return 'first parameter has to be lower than the second parameter'
+    var combinations = ''
+    var combCounter = 0
+    for (var i = num1; i <= num2; i++) {
+        for (var j = num1; j <= num2; j++) {
+            if (i !== j) {
+                combinations += i + '.' + j + ' '
+                combCounter++
+            }
+        }
+    } return combinations + 'number of combinations is ' + combCounter
+}
+
+
+console.log(numComb(3, 4));
+
+//Exercise 10
+
+/* Write a program that checks if the entered number is a prime number (i.e. divisible only by 1 and by itself).
+Input:  17    | 15
+Output: true  | false */
+
+function primeCheck(num) {
+    for (var i = 2; i < num; i++) {
+        if (num % i === 0) return false;
+    } return true
+}
+
+console.log(primeCheck(17))
+

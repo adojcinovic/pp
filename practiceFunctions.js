@@ -715,6 +715,43 @@ function divider(arr) {
 
 // console.log(divider(arrayToTest));
 
+//Exercise 3
+
+/* Initialize two arrays. The first one should contain student names, the second one the number of points for each student. 
+Display students' names with their corresponding grade. Use the following ranges:
+51-60 -> 6,
+61-70 -> 7,
+71-80 -> 8,
+81-90 -> 9,
+91-100 -> 10.
+Input: 
+[ "Micahel", "Anne", "Frank", "Joe", "John", "David", "Mark", "Bill" ], [ 50, 39, 63, 72, 99, 51, 83, 59 ]
+Output: 
+Bill acquired 59 points and earned 6. Micahel acquired 50 points and failed to complete the exam.
+*/
+
+var students = ["Micahel", "Anne", "Frank", "Joe", "John", "David", "Mark", "Bill"]
+var grades = [50, 39, 63, 72, 99, 51, 83, 59]
+
+function displayGrades(students, grades) {
+    var marks = ''
+    for (var i = 0; i < students.length; i++) {
+        if (grades[i] <= 50) {
+            marks += students[i] + ' ' + grades[i] + ' exam failed! '
+        } else if (grades[i] > 50 && grades[i] <= 59) {
+            marks += students[i] + ' ' + grades[i] + ' exam passed with mark 6. '
+        } else if (grades[i] >= 60 && grades[i] <= 69) {
+            marks += students[i] + ' ' + grades[i] + ' exam passed with mark 7. '
+        } else if (grades[i] >= 70 && grades[i] <= 79) {
+            marks += students[i] + ' ' + grades[i] + ' exam passed with mark 8. '
+        } else if (grades[i] >= 80 && grades[i] <= 89) {
+            marks += students[i] + ' ' + grades[i] + ' exam passed with mark 9. '
+        } else marks += students[i] + ' ' + grades[i] + ' exam passed with mark 10. '
+    } return marks
+}
+
+console.log(displayGrades(students, grades));
+
 
 //Exercise 6
 /*Write a program that uses a loop to add all the even numbers from 1 to 1000,
@@ -799,7 +836,7 @@ function numComb(num1, num2) { //num2 arg has to be bigger for function to work
 }
 
 
-console.log(numComb(3, 4));
+// console.log(numComb(1, 7));
 
 //Exercise 10
 
@@ -813,5 +850,49 @@ function primeCheck(num) {
     } return true
 }
 
-console.log(primeCheck(17))
+// console.log(primeCheck(2))
 
+//Exercise 11
+
+/*Check if a given string is a palindrome (spaces are ignored).
+Input:  eye  | Geek  | a nut for a jar of tuna
+Output: true | false | true */
+
+
+function palindrome(string) {
+    var original = ''
+    var reversed = ''
+    for (var i = 0; i < string.length; i++) {
+        if (string[i] === ' ') continue;
+        else original += string[i]
+    } for (var i = string.length - 1; i >= 0; i--) {
+        if (string[i] === ' ') continue;
+        else reversed += string[i]
+    } if (original === reversed) {
+        return string + ' is palindrome' + ' = ' + reversed
+    } else return false
+}
+
+
+// console.log(palindrome('no lemon, no melon'))
+
+
+//Exercise 12
+
+/*Write a program that calculates the greatest common divisor of two integers.
+Note: The greatest common divisor of two non-zero integers is the greatest positive number
+that divides both numbers with no remainder.
+Input:  192 42 | 81 9
+Output: 6      | 9 */
+
+
+function commonDivisor(int1, int2) {
+    var commonDiv = 0
+    for (var i = 0; i < int1; i++) {
+        if (int1 % i === 0 && int2 % i === 0) {
+            commonDiv = i
+        }
+    } return commonDiv
+}
+
+console.log(commonDivisor(444, 100))

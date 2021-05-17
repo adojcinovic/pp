@@ -904,11 +904,12 @@ function commonDivisor2(num1, num2) {
     var commonDiv = 0
     if (num1 === num2) return num1
     var min = num1 < num2 ? num1 : num2
-    for (var i = 0; i < min; i++) {
+    for (var i = min; i >= 1; i--) {
         if (num1 % i === 0 && num2 % i === 0) {
             commonDiv = i
+            break
         }
     } return commonDiv
 }
 
-console.log(commonDivisor2(192, 42))
+console.log(commonDivisor2(999, 888))

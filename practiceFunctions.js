@@ -750,7 +750,7 @@ function displayGrades(students, grades) {
     } return marks
 }
 
-console.log(displayGrades(students, grades));
+// console.log(displayGrades(students, grades));
 
 
 //Exercise 6
@@ -887,6 +887,7 @@ Output: 6      | 9 */
 
 
 function commonDivisor(int1, int2) {
+    if (int1 === int2) return int1
     var commonDiv = 0
     for (var i = 0; i < int1; i++) {
         if (int1 % i === 0 && int2 % i === 0) {
@@ -895,4 +896,19 @@ function commonDivisor(int1, int2) {
     } return commonDiv
 }
 
-console.log(commonDivisor(444, 100))
+// console.log(commonDivisor(5689332154, 598))
+
+// same same but optimized
+
+function commonDivisor2(num1, num2) {
+    var commonDiv = 0
+    if (num1 === num2) return num1
+    var min = num1 < num2 ? num1 : num2
+    for (var i = 0; i < min; i++) {
+        if (num1 % i === 0 && num2 % i === 0) {
+            commonDiv = i
+        }
+    } return commonDiv
+}
+
+console.log(commonDivisor2(192, 42))

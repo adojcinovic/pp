@@ -913,3 +913,16 @@ function commonDivisor2(num1, num2) {
 }
 
 console.log(commonDivisor2(999, 888))
+
+
+//Page 6
+
+//Exercise 1
+
+/* Write a function to count vowels in a provided string. Vowels are a, e, i, o, and u as well as A, E, I, O, and U. */
+
+//expression moze da se svede na vrednost
+//function expression var a = function()
+//function declaration function blabla ()
+
+

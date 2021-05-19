@@ -921,8 +921,110 @@ console.log(commonDivisor2(999, 888))
 
 /* Write a function to count vowels in a provided string. Vowels are a, e, i, o, and u as well as A, E, I, O, and U. */
 
+
+
+
 //expression moze da se svede na vrednost
 //function expression var a = function()
 //function declaration function blabla ()
+// callback when function is called with function-s as a parameter
 
 
+//Objects exercises
+
+//Exercise 1
+
+var favCoffee = {
+    name: 'nikaragvica',
+    strenght: 'kisela voda',
+    flavor: 'cokoladna',
+    milk: false,
+    sugar: false
+}
+
+//Exercise 2
+
+var favMovie = {
+    title: 'Underground',
+    actors: ['Marko Dren', 'Petar Popara'],
+    genre: 'drama',
+    popularity: 9
+}
+
+//Exercise 3
+/*Write a function that creates an object that represents a project. Each project is described by: 
+description,  programming language, git repository, boolean status that says if the project is in development or not.
+Add a method that prints out the project's repository,  a method that checks if the project is written in JavaScript
+as well as a method that checks if the project is in development or not. */
+
+
+function createProject() {
+    var project = {
+        description: 'practice',
+        language: 'js',
+        repo: 'github',
+        dev: false,
+        printRepo: function () {
+            console.log(project.repo);
+        },
+        isJS: function () {
+            if (project.language === 'js') return true
+            return false
+        },
+        isDev: function () {
+            return project.dev
+        }
+    }
+    return project
+}
+
+// var project = createProject()
+
+// project.printRepo()
+// console.log(project.isJS());
+// console.log(project.isDev());
+
+//Exercise 4
+
+/*Write a function that creates an object that represents a culinary recipe. Each recipe is described by: name, type of cuisine, complexity (value from 1 to 5), list of ingredients, preparing time, preparing instruction.
+Add a method that prints out all the ingredients necessary for the meal preparation.
+Add a method that checks if a meal can be prepared for 15 minutes.
+Add a method that changes the type of cuisine to the given value.
+Add a method that delete a given ingredient from the list of ingredients.
+*/
+
+function createMasala() {
+    var recipe = {
+        name: 'Chicken tikka masala',
+        typeOfCuisine: 'indian',
+        complexity: 5,
+        ingredients: ['chicken', 'tomato sauce', 'rice', 'ghee'],
+        prepTimeInMin: 45,
+        instruction: 'cook it with love',
+        printIngredients: function () {
+            console.log(recipe.ingredients);
+        },
+        isFastFood: function () {
+            return recipe.prepTimeInMin <= 15
+        },
+        changeType: function (cuisine) {
+            recipe.typeOfCuisine = cuisine
+        },
+        deleteIngredient: function (ingredient) {
+            var newList = []
+            for (var i = 0; i < recipe.ingredients.length; i++) {
+                if (recipe.ingredients[i] !== ingredient) {
+                    newList[newList.length] = recipe.ingredients[i]
+                }
+            } recipe.ingredients = newList
+        }
+    };
+    return recipe
+}
+
+
+var createdMeal = createMasala()
+
+createdMeal.deleteIngredient('chicken')
+
+console.log(createdMeal.ingredients);

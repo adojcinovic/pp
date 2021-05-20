@@ -912,14 +912,7 @@ function commonDivisor2(num1, num2) {
     } return commonDiv
 }
 
-console.log(commonDivisor2(999, 888))
-
-
-//Page 6
-
-//Exercise 1
-
-/* Write a function to count vowels in a provided string. Vowels are a, e, i, o, and u as well as A, E, I, O, and U. */
+// console.log(commonDivisor2(999, 888))
 
 
 
@@ -1027,4 +1020,4 @@ var createdMeal = createMasala()
 
 createdMeal.deleteIngredient('chicken')
 
-console.log(createdMeal.ingredients);
+// console.log(createdMeal.ingredients);

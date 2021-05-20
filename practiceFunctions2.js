@@ -1,3 +1,5 @@
+//file practiceFunctions.js extended
+
 //Page 6
 
 //Exercise 1
@@ -87,4 +89,34 @@ function multipication() {
     return table
 }
 
-console.log(multipication());
+// console.log(multipication());
+
+
+//Exercise 6
+/* Write a function to input temperature in Centigrade and convert to Fahrenheit. */
+//(0°C × 9/5) + 32 = 32°F
+//(32°F − 32) × 5/9 = 0°C
+
+
+function celsiusToFarenheitConverter(degreesC) {
+    return (degreesC * 9 / 5) + 32;
+}
+
+// console.log(celsiusToFarenheitConverter(15));
+
+
+//Exercise 7
+/* Write a function to find the maximum element in array of numbers. Filter out all non-number elements. */
+
+var elements = ["M", NaN, 12, "Steve", 11, "John", 99, "Mark", true, "A"];
+
+function maxNumber(array) {
+    var max = -Infinity
+    for (var i = 0; i < array.length; i++) {
+        if (typeof array[i] === 'number') {
+            max = array[i]
+        }
+    } return max
+}
+
+console.log(maxNumber(elements))

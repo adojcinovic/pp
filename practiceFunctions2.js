@@ -119,4 +119,30 @@ function maxNumber(array) {
     } return max
 }
 
-console.log(maxNumber(elements))
+// console.log(maxNumber(elements))
+
+//Exercise 8
+/* Write a function to find the maximum and minimum elements. Function returns an array. */
+
+var numbersArr = [5, 46, 1000, 55, 44, 1]
+
+function minMax(array) {
+    var min = +Infinity;
+    var max = -Infinity;
+    maxMin = []
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] < min) {
+            min = array[i]
+        } else if (array[i] > max) {
+            max = array[i]
+        }
+    } for (var i = 0; i < 1; i++) {
+        maxMin[maxMin.length] = max
+        maxMin[maxMin.length] = min
+    }; return maxMin
+}
+console.log(minMax(numbersArr));
+
+
+//Exercise 9
+/* Write a function to find the median element of array. */

@@ -141,8 +141,67 @@ function minMax(array) {
         maxMin[maxMin.length] = min
     }; return maxMin
 }
-console.log(minMax(numbersArr));
+// console.log(minMax(numbersArr));
 
 
 //Exercise 9
 /* Write a function to find the median element of array. */
+
+var list = [1, 2, 3, 4, 5, 6]
+
+function medianElement(array) {
+    var sum = 0;
+    for (var i = 0; i < array.length; i++) {
+        sum = sum + array[i]
+    } return sum / array.length
+}
+
+// console.log(medianElement(list));
+
+
+//LESSON
+// string methods indexOf() lastIndexOf() charAt() toUpperCase() toLowerCase() slice() substring() split() concat() search() match() replace() replaceAll() last 4 use RegEx as param
+//array methods push() pop() shift() unShift() join() slice() splice() concat()
+//object methods defineProperty() hasOwnProperty() freeze() 
+//number properties toFixed() toString() 
+
+var a = {
+    name: 'aleksandar'
+}
+
+// console.log(a.name.valueOf());
+
+var obj = {}
+
+Object.defineProperty(obj, 'name', {
+    value: 'aleksandar',
+    writable: true,
+    enumerable: true
+})
+
+// ENDLESSON
+
+
+//Exercise 10
+/* Write a function to find the element that occurs most frequently. */
+
+var arrToCheck = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3]
+
+function frequency(array) {
+    var maxFreq = 0;
+    var maxEle = ''
+    var counter = 0
+    for (var i = 0; i < array.length; i++) {
+        for (var j = 0; j < array.length; j++) {
+            if (array[j] === array[i]) {
+                counter++
+            }
+        } if (counter > maxFreq) {
+            maxFreq = counter
+            maxEle = array[i]
+        } counter = 0
+
+    } return maxEle + maxFreq
+}
+
+console.log(frequency(arrToCheck));

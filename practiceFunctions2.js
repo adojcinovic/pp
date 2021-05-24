@@ -250,13 +250,12 @@ function findDuplicates(array) {
 
 //built in objects exercise
 
+
+//Exercise 3a
 /*Write a function that checks if a given array has odd number of elements.
 Input: [1, 2, 9, 2, 1]
-Output: true
+Output: true */
 
-Write a function that counts the number of elements less than the middle element. If the given array has an even number of elements, print out an error message.
-Input: [-1, 8.1, 3, 6, 2.3, 44, 2.11]
-Output: 4 */
 var Input = [-1, 8.1, 3, 6, 2.3, 44, 2.11]
 
 function isOddArr(array) {
@@ -267,18 +266,36 @@ function isOddArr(array) {
 
 // console.log(isOddArr(duplicates));
 
-function someFunc(array) {
-    var count = 0
-    var middleEl;
-    if (array.length % 2 === 0) {
-        return console.log('error');
-    } middleEl = array[array.length / 2]
+
+//Exercise 3b
+/* Write a function that counts the number of elements less than the middle element. If the given array has an even number of elements, print out an error message.
+Input: [-1, 8.1, 3, 6, 2.3, 44, 2.11, 2]
+Output: 4 */
+
+
+
+
+function countElements(array) {
+    var counter = 0
+    if (array.length % 2 === 0) return 'error'
+    var middleEl = Math.floor([array.length / 2])
     for (var i = 0; i < array.length; i++) {
-        if (array[i] < middleEl)
+        if (array[i] < array[middleEl]) {
             counter++
-    } return counter
+        }
+    }
+
+    return counter
 }
 
+
+// console.log(countElements([-1, 8.1, 3, 6, 2.3, 44, 2.11]));
+
+
+//Exercise 4
+/* Write a function that finds the smallest element of a given array. The function should return an object that contains the smallest value and its last position in the array.
+Input: [1, 4, -2, 11, 8, 1, -2, 3]
+Output:  { minValue: -2, minLastIndex: 6 } */
 
 
 var test = [1, 4, -2, 11, 8, 1, -2, 3];
@@ -295,6 +312,7 @@ function findMin(arr) {
 
 // console.log(findMin(test));
 
+// Exercise 5b
 /*Write a function that finds all the elements in a given array that start with the “pro” substring. The function should be case insensitive. 
         Input: [’JavaScript’, ’Programming’, ’fun’, ’product’] 
     Output: [’Programming’, ‘product’] */
@@ -310,4 +328,67 @@ function findPro(array) {
     } return newArr
 }
 
-console.log(findPro(pro));
+// console.log(findPro(pro));
+
+//Page 2
+//Exercise 1
+/* Write a JavaScript function that reverses a number. typeof result of the function should be “number”. */
+
+function reverseNum(num) {
+    var output = num + ''
+    return Number(output.split("").reverse().join(''))
+}
+
+// console.log(typeof (reverseNum(12345)));
+// console.log(reverseNum(12345))
+
+//Exercise 2
+/* Write a JavaScript function that returns a passed string with letters in alphabetical order. 
+Note: Assume punctuation, numbers and symbols are not included in the passed string.
+
+“Webmaster” -> “abeemrstw” */
+
+function alphabetical(string) {
+    return string.split('').sort().join('')
+}
+// console.log(alphabetical('kurcina'));
+
+// console.log([1, 5, 14, 55, 6, 25, 35].sort((a, b) => a - b));
+
+//Exercise 3
+/*Write a function to alphabetize words of a given string. Alphabetizing a string means rearranging the letters so they are sorted from A to Z.
+	
+    "Republic Of Serbia" -> "Rbceilpu Of Sabeir" */
+
+function alphabetize(string) {
+    var arr = string.split(' ')
+    var arr2 = []
+    for (var i = 0; i < arr.length; i++) {
+        arr2[arr2.length] = arr[i].split('').sort().join('')
+    } return arr2.join(' ')
+}
+
+// console.log(alphabetize('Republic Of Serbia'));
+
+
+//Exercise 4
+/* Write a function to split a string and convert it into an array of words.
+
+    "John Snow" -> [ 'John', 'Snow' ] */
+
+function splitString(string) {
+    return string.split(' ')
+}
+
+// console.log(splitString('John Snow'));
+
+//Exercise 5
+/* Write a function to convert a string to its abbreviated form.
+
+    "John Snow" -> 	"John S." */
+
+function abbreviateString(string) {
+    return string.split(' ')[0] + ' ' + string.split(' ')[1].substring(0, 1) + '.'
+}
+
+console.log(abbreviateString('Aleksandar Dojcinovic'));

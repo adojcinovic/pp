@@ -204,4 +204,110 @@ function frequency(array) {
     } return maxEle + maxFreq
 }
 
-console.log(frequency(arrToCheck));
+// console.log(frequency(arrToCheck));
+
+
+//Exercise 11
+/*Write a function to find and return the first, middle and last element of an array if the array has odd number of elements.
+If number of elements is even, return just the first and the last. In other cases (empty array), input array should be returned. */
+
+
+for (var i = 0; i < 100; i++) {
+    // console.log(Math.ceil(Math.random() * 100));
+}
+
+// console.log(Date.now());
+
+
+
+var arrToCheck = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3]
+
+
+function addEl(array) {
+    var newArr = []
+    for (var i = 0; i < array.length; i++) {
+        newArr[newArr.length] = i
+        newArr[newArr.length] = i
+    } return newArr
+}
+
+// console.log(addEl(arrToCheck));
+
+var duplicates = [1, 4, 2, 3, 4, 4, 5, 6, 8, 7]
+
+
+function findDuplicates(array) {
+    var newArr = []
+    for (var i = 1; i < array.length; i++) {
+        if (newArr.indexOf(array[i]) === array[i])
+            continue
+        else newArr.push(array[i])
+    } return newArr
+}
+
+// console.log(findDuplicates(duplicates));
+
+
+//built in objects exercise
+
+/*Write a function that checks if a given array has odd number of elements.
+Input: [1, 2, 9, 2, 1]
+Output: true
+
+Write a function that counts the number of elements less than the middle element. If the given array has an even number of elements, print out an error message.
+Input: [-1, 8.1, 3, 6, 2.3, 44, 2.11]
+Output: 4 */
+var Input = [-1, 8.1, 3, 6, 2.3, 44, 2.11]
+
+function isOddArr(array) {
+    if (array.length % 2 === 1) {
+        return false;
+    } else return true
+}
+
+// console.log(isOddArr(duplicates));
+
+function someFunc(array) {
+    var count = 0
+    var middleEl;
+    if (array.length % 2 === 0) {
+        return console.log('error');
+    } middleEl = array[array.length / 2]
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] < middleEl)
+            counter++
+    } return counter
+}
+
+
+
+var test = [1, 4, -2, 11, 8, 1, -2, 3];
+
+function findMin(arr) {
+    var min = Math.min(...arr);
+    var last = arr.lastIndexOf(min);
+    var output = {
+        minValue: min,
+        minlastIndex: last
+    }
+    return output
+}
+
+// console.log(findMin(test));
+
+/*Write a function that finds all the elements in a given array that start with the “pro” substring. The function should be case insensitive. 
+        Input: [’JavaScript’, ’Programming’, ’fun’, ’product’] 
+    Output: [’Programming’, ‘product’] */
+var pro = ['JavaScript', 'Programming', 'fun', 'product']
+
+
+function findPro(array) {
+    var newArr = []
+    for (var i = 0; i < array.length; i++) {
+        if (array[i].toLowerCase().substring(0, 3) === 'pro') {
+            newArr.push(array[i])
+        }
+    } return newArr
+}
+
+console.log(findPro(pro));

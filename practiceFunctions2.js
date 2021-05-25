@@ -330,6 +330,26 @@ function findPro(array) {
 
 // console.log(findPro(pro));
 
+//Exercise 12
+
+/*  Write a function that shuffles the elements of a given array. 
+		Input: [3, 6, 11, 2, 9, 1]
+        Output: [6, 2, 9, 1, 3, 11]  (it can be any random permutation of the given array) */
+
+
+var arrayOriginal = [3, 6, 11, 2, 9, 1];
+
+function shufflesElements(array) {
+    var newArr = []
+    for (var i = 0; i < array.length; i++) {
+        newArr[i] = array[Math.floor(Math.random() * (array.length - newArr.length) + newArr.length)]
+    } return newArr
+}
+
+console.log(shufflesElements(arrayOriginal));
+
+console.log(Math.floor(Math.random() * (6 - 1) + 6));
+
 //Page 2
 //Exercise 1
 /* Write a JavaScript function that reverses a number. typeof result of the function should be “number”. */
@@ -391,4 +411,89 @@ function abbreviateString(string) {
     return string.split(' ')[0] + ' ' + string.split(' ')[1].substring(0, 1) + '.'
 }
 
-console.log(abbreviateString('Aleksandar Dojcinovic'));
+// console.log(abbreviateString('Aleksandar Dojcinovic'));
+
+
+
+//Exercise 6
+/*Write a function that adds string to the left or right of string, by replacing it’s characters.
+
+	'0000', ‘123’, 'l' -> 0123
+'00000000', ‘123’, 'r' -> 12300000 */
+
+var aaa = '123'
+
+function addString(string, stringToAdd) {
+    var output = string.split('')
+    output.splice(1, 3, stringToAdd)
+    var output2 = string.split('')
+    output2.splice(0, 0, stringToAdd)
+    return output.join('') + ' ' + output2.join('')
+}
+
+
+// console.log(addString('0000', '123'));
+
+
+//Exercise 7
+/* Write a function to capitalize the first letter of a string and returns modified string.
+
+"js string exercises" -> "Js string exercises" */
+
+function capitalizeFirstLetter(string) {
+    var cap = string.split('').splice(0, 1).join('').toUpperCase()
+    var str = string.split('').slice(1)
+    var final = cap + str.join('')
+    return final
+}
+
+// console.log(capitalizeFirstLetter('perica string'));
+
+
+//Exercise 8
+
+/*Write a function to hide email addresses to protect them from unauthorized users.
+
+    "somerandomaddress@example.com" -> "somerand...@example.com" */
+
+function hideEmail(email) {
+    var short = email.split('@')[0]
+    var sufix = email.split('@')[1]
+    if (short.length > 10) {
+        short = short.slice(0, 6)
+    } else if (short.length >= 5) {
+        short = short.slice(0, 3)
+    } else short = short.slice(0, 2)
+    var final = ''
+    return final.concat(short, '...@', sufix)
+}
+
+// console.log(hideEmail('adojcinovic@outlook.com'));
+
+
+//Exercise 9
+
+/* Write a program that accepts a string as input and swaps the case of each character. For example, if you input 'The Quick Brown Fox', the output should be 'tHE qUICK bROWN fOX'.
+       var UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+       var LOWER = 'abcdefghijklmnopqrstuvwxyz'; */
+
+
+
+
+function swapChar(string) {
+    var UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var LOWER = 'abcdefghijklmnopqrstuvwxyz';
+    var output = ''
+    for (var i = 0; i < string.length; i++) {
+        for (var j = 0; j <= UPPER.length; j++) {
+            if (string[i] === UPPER[j]) {
+                output += LOWER[j]
+            } else if (string[i] === LOWER[j]) {
+                output += UPPER[j];
+            }
+        }
+    } return output
+}
+
+
+// console.log(swapChar('The Quick Brown Fox'));

@@ -346,9 +346,9 @@ function shufflesElements(array) {
     } return newArr
 }
 
-console.log(shufflesElements(arrayOriginal));
+// console.log(shufflesElements(arrayOriginal));
 
-console.log(Math.floor(Math.random() * (6 - 1) + 6));
+// console.log(Math.floor(Math.random() * (6 - 1) + 6));
 
 //Page 2
 //Exercise 1
@@ -497,3 +497,30 @@ function swapChar(string) {
 
 
 // console.log(swapChar('The Quick Brown Fox'));
+
+
+// Exercise 7 page 8
+/* Write a function that filters elements of the given array so that they satisfy a condition given by the callback function.
+Input: [2, 8, 11, 4, 9, 3], callback function checks if the number is odd
+Output: [11, 9, 3]  */
+
+var testArray = [2, 8, 11, 4, 9, 3]
+
+function isOdd(array) {
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] % 2 === 1) {
+            return true
+        } else return false
+    }
+}
+
+function filterElements(array, f) {
+    var newArr = []
+    for (var i = 0; i < array.length; i++) {
+        if (f) {
+            newArr[newArr.length] = array[i]
+        }
+    } return newArr
+}
+
+console.log(filterElements(testArray, isOdd))

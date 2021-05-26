@@ -1,8 +1,8 @@
 function Product(ime, cena, istekRoka) {
-    this.productID = Math.floor(Math.random() * 90000 + 10000)
-    this.name = ime,
-        this.price = Number(cena.toFixed(2)),
-        this.expirationDate = new Date(istekRoka)
+    this.productID = Math.floor(Math.random() * 90000 + 10000);
+    this.name = ime;
+    this.price = Number(cena.toFixed(2));
+    this.expirationDate = new Date(istekRoka);
 }
 
 function ShoppingBag() {
@@ -11,9 +11,9 @@ function ShoppingBag() {
 
 
 function PaymentCard(balance, ifActive, validity) {
-    this.balance = Number(balance.toFixed(2)),
-        this.ifActive = ifActive,
-        this.validity = validity
+    this.balance = Number(balance.toFixed(2));
+    this.ifActive = ifActive;
+    this.validity = validity;
 }
 
 // METHODS DOWNSTAIRS
@@ -34,9 +34,9 @@ Product.prototype.getInfo = function () {
 
 
 
-ShoppingBag.prototype.addProduct = function (Product) {
-    if (Product.expirationDate > new Date()) {
-        this.products[this.products.length] = Product
+ShoppingBag.prototype.addProduct = function (product) {
+    if (product.expirationDate > new Date()) {
+        this.products[this.products.length] = product
     }
 }
 
@@ -50,6 +50,14 @@ ShoppingBag.prototype.getMostExpensive = function () {
     } return maxPrice
 
 }
+
+ShoppingBag.prototype.calculateAvgPrice = function () {
+    var avgPrice = 0
+    for (var i = 0; i < this.products.length; i++) {
+        avgPrice += this.products[i].price
+    } return Number(avgPrice / this.products.length).toFixed(3)
+}
+
 
 
 ShoppingBag.prototype.calculateTotalPrice = function () {
@@ -76,6 +84,7 @@ vrecica.addProduct(mleko)
 vrecica.addProduct(jogurt)
 vrecica.addProduct(janje)
 
+
 console.log(vrecica);
 console.log(mleko.getInfo());
 console.log(jogurt.getInfo());
@@ -98,4 +107,5 @@ function checkOutAndBuy(basket, card) {
 checkOutAndBuy(vrecica, kartica)
 checkOutAndBuy(vrecica, drugaKartica)
 
+console.log(vrecica.calculateAvgPrice());
 //moje ime je Aleksandar Dojcinovic, i ja sam danas postao programer

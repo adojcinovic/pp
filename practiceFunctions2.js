@@ -333,7 +333,7 @@ function findPro(array) {
 //Exercise 12
 
 /*  Write a function that shuffles the elements of a given array. 
-		Input: [3, 6, 11, 2, 9, 1]
+        Input: [3, 6, 11, 2, 9, 1]
         Output: [6, 2, 9, 1, 3, 11]  (it can be any random permutation of the given array) */
 
 
@@ -418,7 +418,7 @@ function abbreviateString(string) {
 //Exercise 6
 /*Write a function that adds string to the left or right of string, by replacing it’s characters.
 
-	'0000', ‘123’, 'l' -> 0123
+    '0000', ‘123’, 'l' -> 0123
 '00000000', ‘123’, 'r' -> 12300000 */
 
 var aaa = '123'
@@ -514,13 +514,15 @@ function isOdd(array) {
     }
 }
 
-function filterElements(array, f) {
-    var newArr = []
-    for (var i = 0; i < array.length; i++) {
-        if (f) {
-            newArr[newArr.length] = array[i]
-        }
-    } return newArr
+
+
+function blabla(num) {
+    return num
 }
 
-console.log(filterElements(testArray, isOdd))
+blabla.age = 123
+
+console.log(blabla(blabla.__proto__.__proto__.__proto__));
+
+
+

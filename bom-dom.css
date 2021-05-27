@@ -1,0 +1,15 @@
+.color {
+    background-color: blueviolet;
+}
+
+.color-2 {
+    background-color: brown;
+}
+
+.color-3 {
+    background-color: burlywood;
+    text-transform: uppercase;
+}
+.active {
+    color: cadetblue;
+}

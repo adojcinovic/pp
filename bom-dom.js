@@ -37,3 +37,37 @@ traversing()
 changeColor2()
 changeColorAgain()
 
+var paragraph = document.querySelector('div p').textContent;
+
+
+var ra = document.querySelector('div p').textContent = 'kurcina'.toLocaleUpperCase()
+
+
+
+console.log(paragraph);
+
+var lista = ['tanko', 'debelo', 'jebanje keve'];
+var main = document.querySelector('.sviranje-kurcu')
+
+function createDropdown(array, node) {
+    var select = document.createElement('select');
+
+    for (var i = 0; i < array.length; i++) {
+        var option = document.createElement('option');
+        option.textContent = array[i]
+        select.appendChild(option)
+    } node.appendChild(select)
+}
+
+createDropdown(lista, main)
+
+
+/* Attributes
+Create a form that contains multiple input elements with labels.
+Some of those elements should be required.
+
+Create a function that validates the form.
+The function checks each input element that belongs to the form.
+If the element has the required attribute and no data, it should get red borders.
+*/
+//done with bootstrap

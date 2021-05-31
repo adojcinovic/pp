@@ -85,23 +85,27 @@ var subs = document.querySelector('.subs')
 function createPage(array) {
     for (var i = 0; i < array.length; i++) {
         var card = document.createElement('div');
-        card.setAttribute('class', 'card');
         var img = document.createElement('img');
-        img.src = array[i].photo;
         var name = document.createElement('h2');
-        name.textContent = array[i].name;
         var number = document.createElement('h3');
+        var position = document.createElement('p')
+        card.setAttribute('class', 'card');
+        img.src = array[i].photo;
+        name.textContent = array[i].name;
         number.textContent = array[i].num;
+        position.textContent = array[i].position;
         if (i < 5) {
             firstTeam.append(card);
             card.append(img);
             card.append(name);
             card.append(number);
+            card.append(position)
         } else {
             subs.append(card);
             card.append(img);
             card.append(name);
             card.append(number);
+            card.append(position)
         }
     }
 }

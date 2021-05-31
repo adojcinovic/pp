@@ -79,6 +79,9 @@ var players = [
     }
 ];
 
+
+
+
 var firstTeam = document.querySelector('.first-team')
 var subs = document.querySelector('.subs')
 
@@ -120,6 +123,22 @@ function shufleArr(arr) {
     return arr
 }
 
+function substitute() {
+    var startingFive = document.querySelectorAll('.first-team div');
+    var random1 = Math.floor(Math.random() * startingFive.length);
+    var el1 = startingFive[random1];
+
+    var substitution = document.querySelectorAll('.subs div');
+    var random2 = Math.floor(Math.random() * substitution.length);
+    var el2 = substitution[random2]
 
 
-createPage(shufleArr(players))
+
+    firstTeam.appendChild(el2);
+    subs.appendChild(el1)
+
+}
+
+
+createPage(shufleArr(players));
+setInterval(substitute, 2000)

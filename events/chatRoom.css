@@ -1,0 +1,13 @@
+.main {
+    width: 400px;
+    height: 700px;
+    border: black solid 2px;
+    background-color: blueviolet;
+    color: white;
+}
+
+.text {
+    width: 346px;
+    background-color: yellow;
+    color: red;
+}

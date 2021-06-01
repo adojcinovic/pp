@@ -118,3 +118,8 @@ list.forEach(function (e, i) {
     console.log(e * i);
 
 })
+
+
+const a1 = [1, 5, 6, 9, 2, 11, 5, 3]
+
+console.log(a1.sort());

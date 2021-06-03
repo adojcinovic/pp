@@ -17,4 +17,12 @@ let sum = voters.reduce(function (acc, e, i, arr) {
     return acc + e.age / arr.length
 }, 0)
 
+let glasanje = voters.filter(function (e) {
+    if (e.voted) return e
+})
+
+console.log(glasanje.length);
+
+
 console.log(sum);
+

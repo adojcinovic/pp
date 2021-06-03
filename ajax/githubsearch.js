@@ -1,7 +1,7 @@
 var input = document.querySelector('input');
 var body = document.querySelector('body');
 var input = document.querySelector('input')
-
+console.log(input.value);
 
 function createUsers(users) {
     users.forEach((element) => {

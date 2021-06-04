@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 const input = document.querySelector('input');
 const body = document.querySelector('body');
 const input = document.querySelector('input')
 
+=======
+var input = document.querySelector('input');
+var body = document.querySelector('body');
+var input = document.querySelector('input')
+console.log(input.value);
+>>>>>>> a37f29bc5d2653a8c52a1a3cf4e4586e771230ea
 
 function createUsers(users) {
     users.forEach((element) => {

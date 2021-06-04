@@ -1,0 +1,23 @@
+.main {
+    width: 1200px;
+    background-color: antiquewhite;
+}
+
+header {
+    display: flex;
+    width: 800px;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+
+img {
+    width: 200px;
+    height: 80px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}

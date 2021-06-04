@@ -1,4 +1,4 @@
-const ytKey = 'AIzaSyBgxA-FQ4toSpAr4f84sVG6MCKxBheCafg';
+
 
 const input = document.querySelector('input')
 const content = document.querySelector('div')

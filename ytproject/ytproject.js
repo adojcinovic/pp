@@ -1,12 +1,31 @@
-
+const ytKey = 'AIzaSyBgxA-FQ4toSpAr4f84sVG6MCKxBheCafg';
 
 const input = document.querySelector('input')
-const content = document.querySelector('div')
-const iframe = document.querySelector('iframe')
+const videos = document.querySelector('videos')
+
+
 
 const ytlink = 'https://www.youtube.com/watch?v='
 // path to thumbnail e.snippet.thumbnails.default.url
 
+function renderData(data) {
+    data.map(e => {
+        var thumbnail = `${e.snippet.thumbnails.default.url}`;
+        var title = `${e.snippet.title}`;
+        var description = `${e.snippet.description}`;
+        createCard(thumbnail, title, description)
+    })
+}
+
+function createCard(slika, naslov, opis) {
+    var thumbnail = document.createElement('img');
+    var title = document.createElement('h3');
+    var description = document.createElement('p');
+    thumbnail.src = slika;
+    title.innerText = naslov;
+    description.innerText = opis;
+    videos.append(thumbnail, title, description)
+}
 
 
 function createContent(videos) {
@@ -38,22 +57,22 @@ function getData() {
 
     request.open('GET', `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${input.value}&key=${ytKey}`);
 
+    request.send()
 
     request.onload = function () {
         const data = JSON.parse(request.responseText).items;
-        createContent(data);
+        renderData(data); // here is data that was requested
     }
 
-    request.send()
 }
 
 getData()
 
-input.addEventListener('keydown', function (event) {
-    if (event.keyCode === 13) {
-        content.innerHTML = ''
-        getData();
-        input.value = ''
+// input.addEventListener('keydown', function (event) {
+//     if (event.keyCode === 13) {
+//         content.innerHTML = ''
+//         getData();
+//         input.value = ''
 
-    }
-})
+//     }
+// })

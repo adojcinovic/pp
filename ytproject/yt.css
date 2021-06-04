@@ -1,23 +1,36 @@
-.main {
-    width: 1200px;
-    background-color: antiquewhite;
+html, body {
+    margin: 0 auto;
+    width: 1080px;
 }
 
-header {
+#main {
+    width: 100%;
+
+}
+
+#header {
     display: flex;
-    width: 800px;
+    height: 50px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#preview {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+#card {
+    width: 23%;
+    height: 200px;
+    border: 1px solid black;
+    margin-top: 20px;
+}
+
+#videos {
+    display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-}
-
-
-img {
-    width: 200px;
-    height: 80px;
-}
-
-.content {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }

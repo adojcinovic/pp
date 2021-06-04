@@ -1,6 +1,6 @@
-var input = document.querySelector('input');
-var body = document.querySelector('body');
-var input = document.querySelector('input')
+const input = document.querySelector('input');
+const body = document.querySelector('body');
+const input = document.querySelector('input')
 
 
 function createUsers(users) {
@@ -21,13 +21,13 @@ function getItems() {
 
     request.open('GET', `https://api.github.com/search/users?q=${input.value}&per_page=5`);
 
+    request.send()
 
     request.onload = function () {
         const data = JSON.parse(request.responseText).items;
         createUsers(data);
     }
 
-    request.send()
 }
 var flag = false;
 

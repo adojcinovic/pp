@@ -1,78 +1,79 @@
 const ytKey = 'AIzaSyBgxA-FQ4toSpAr4f84sVG6MCKxBheCafg';
 
-const input = document.querySelector('input')
-const videos = document.querySelector('videos')
 
 
-
-const ytlink = 'https://www.youtube.com/watch?v='
+const ytlink = 'https://www.youtube.com/embed/'
 // path to thumbnail e.snippet.thumbnails.default.url
 
-function renderData(data) {
-    data.map(e => {
-        var thumbnail = `${e.snippet.thumbnails.default.url}`;
-        var title = `${e.snippet.title}`;
-        var description = `${e.snippet.description}`;
-        createCard(thumbnail, title, description)
+function showVideo(videoId) {
+    const container = document.getElementById('preview-container')
+    const iframe = document.getElementById('preview')
+    container.classList.remove('hidden');
+    iframe.setAttribute('src', `${ytlink}${videoId}`)
+}
+
+
+
+function createContent(videoID, description, title, img) {
+    const card = document.createElement('div');
+    card.classList.add('card')
+    const thumbnail = document.createElement('img');
+    const label = document.createElement('h3');
+    const desc = document.createElement('p');
+    thumbnail.src = img;
+    desc.innerHTML = description;
+    label.innerHTML = title;
+    card.appendChild(thumbnail);
+    card.appendChild(label);
+    card.appendChild(desc)
+    card.addEventListener('click', () => showVideo(videoID))
+    return card
+
+}
+
+
+
+function renderPage(data) {
+    const content = document.getElementById('videos');
+    content.innerHTML = ''
+    data.forEach((e) => {
+        var card = createContent(e.videoUrl, e.opis, e.naslov, e.slika);
+        content.appendChild(card)
     })
 }
 
-function createCard(slika, naslov, opis) {
-    var thumbnail = document.createElement('img');
-    var title = document.createElement('h3');
-    var description = document.createElement('p');
-    thumbnail.src = slika;
-    title.innerText = naslov;
-    description.innerText = opis;
-    videos.append(thumbnail, title, description)
-}
+function getData(searchString) {
+    fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${searchString}&key=${ytKey}`)
+        .then((res) => res.json())
+        .then((data) => {
+            const cleanData = data.items.map((item) => {
+                const videoID = item.id.videoId;
+                const description = item.snippet.description;
+                const title = item.snippet.title;
+                const img = item.snippet.thumbnails.default.url;
+                return {
+                    videoUrl: videoID,
+                    opis: description,
+                    naslov: title,
+                    slika: img
+                }
+            })
+            renderPage(cleanData);
+            console.log(cleanData);
 
-
-function createContent(videos) {
-    console.log(videos);
-    videos.forEach(function (e) {
-        var listOfVideos = document.createElement('div');
-        var thumbnail = document.createElement('img');
-        thumbnail.addEventListener('click', function () {
-            console.log(e);
-            iframe.setAttribute('src', `${ytlink}${e.id.videoId}`)
-            console.log(iframe.src);
         })
-        var video = document.createElement('div')
-        var title = document.createElement('h3')
-        var description = document.createElement('p')
-        video.append(thumbnail);
-        video.append(title);
-        video.append(description);
-        thumbnail.src = `${e.snippet.thumbnails.default.url}`;
-        title.textContent = `${e.snippet.title}`;
-        description.textContent = `${e.snippet.description}`;
-        listOfVideos.append(video)
-        content.append(listOfVideos)
-    })
 }
 
-function getData() {
-    var request = new XMLHttpRequest();
+// getData('pera')
 
-    request.open('GET', `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${input.value}&key=${ytKey}`);
 
-    request.send()
 
-    request.onload = function () {
-        const data = JSON.parse(request.responseText).items;
-        renderData(data); // here is data that was requested
+function searchHandler(event) {
+    if (event.keyCode === 13) {
+        var searchString = event.target.value
+        getData(searchString)
     }
-
 }
 
-getData()
 
-// input.addEventListener('keydown', function (event) {
-//     if (event.keyCode === 13) {
-//         content.innerHTML = ''
-//         getData();
-//         input.value = ''
-
-//     }
-// })
+document.getElementById('searchBar').addEventListener('keydown', searchHandler)

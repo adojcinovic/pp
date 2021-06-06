@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 html, body {
     margin: 0 auto;
     width: 1080px;
@@ -15,17 +19,18 @@ html, body {
     justify-content: space-between;
 }
 
-#preview {
+#preview-container {
     display: flex;
     justify-content: center;
     margin-top: 50px;
 }
 
-#card {
+.card {
     width: 23%;
     height: 200px;
     border: 1px solid black;
     margin-top: 20px;
+    overflow: hidden;
 }
 
 #videos {

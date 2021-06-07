@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+}
+
+
+html, body {
+    margin: 0 auto;
+    width: 1080px;
+    
+}
+
+header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: gray;
+    justify-content: space-around;
+    color: white;
+}
+
+#pop-shows {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+#card {
+    height: 295px;
+    width: 210px;
+    background-color: teal;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+#link {
+    text-align: center;
+}
+
+#container {
+    display: flex;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0 20px 0;
+}
+
+.poster {
+    width: 400px;
+    height: 600px;
+}

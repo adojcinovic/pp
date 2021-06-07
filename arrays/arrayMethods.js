@@ -26,3 +26,11 @@ console.log(glasanje.length);
 
 console.log(sum);
 
+const array1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+
+console.log(array1.reduce(function (acc, e) {
+    if (e > 5) acc.push(e)
+    return acc
+}, [])
+);

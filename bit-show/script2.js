@@ -5,7 +5,9 @@ console.log(id);
 
 fetch('http://api.tvmaze.com/shows')
     .then(response => response.json())
-    .then(data)
+    .then(data => {
+        const found = data.find()
+    })
 
 
 function populatePage(data) {

@@ -1,6 +1,7 @@
 const searchApi = 'http://api.tvmaze.com/search/shows?q='
-let input = 'friends'
 
+
+var input = 'kurac'
 //search request
 
 fetch(`${searchApi}${input}`)
@@ -23,7 +24,7 @@ function populatePage(data) {
             window.location = './singleShow.html'
         })
         container.appendChild(card)
-        console.log(container);
+        // console.log(container);
     })
 }
 
@@ -38,7 +39,7 @@ function createCard(img, title, id) {
     card.setAttribute('id', 'card')
     card.appendChild(poster);
     card.appendChild(ime);
-    console.log(card);
+    // console.log(card);
     return card
 }
 
@@ -48,7 +49,6 @@ fetch('http://api.tvmaze.com/shows')
     .then(response => response.json())
     .then(data => {
         const filtered = data.filter((d, i) => i < 50);
-        console.log(filtered);
         const top50 = filtered.map(function (e) {
             return {
                 title: e.name,
@@ -56,6 +56,6 @@ fetch('http://api.tvmaze.com/shows')
                 id: e.id
             }
         })
-        console.log(top50);
+        // console.log(top50);
         populatePage(top50)
     })

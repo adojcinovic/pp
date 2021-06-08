@@ -38,3 +38,14 @@ console.log(array1.reduce(function (acc, e) {
 var array = [{ a: 2, b: true }, { a: 4, b: false }, { a: 3, b: true }, { a: 0, b: false }]
 
 console.log(array.filter(e => e.a && e.b));
+
+var k = 'kurcina'
+
+function transform(string) {
+    return string + '____'
+}
+
+k = transform(k)
+
+console.log(k);
+

@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#header {
+    height: 50px;
+    width: 100%;
+    background-color: gray;
+    color: white;
+}
+
+#nav-bar {
+    align-items: center;
+    margin-left: 800px;
+}
+
+#wrapper {
+    margin: 0 auto;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+#card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 23%;
+    background-color: white;
+    align-items: center;
+    margin-bottom: 20px;
+    border: solid 2px black;
+}
+
+#card img {
+    width: 100%;
+}
+
+#card > h3 {
+    text-align: center;
+}
+
+#like-button {
+    align-items: center;
+    width: 20%;
+    background-color: lightskyblue;
+    margin-bottom: 10px;
+}
+
+#poster {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: black solid 2px;
+    width: 400px;
+    height: 600px;
+}
+
+#poster > img {
+    height: 450px;
+    width: 100%;
+}
+
+#single-poster {
+    display: flex;
+   justify-content: center;
+   margin-top: 50px;
+}

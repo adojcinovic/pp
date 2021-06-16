@@ -1021,3 +1021,18 @@ var createdMeal = createMasala()
 createdMeal.deleteIngredient('chicken')
 
 // console.log(createdMeal.ingredients);
+
+var a = 'adoj...ovic@icloud.com'.split('@')
+var first = a[0]
+'adovic'
+
+console.log(first.length);
+
+var bla = first.split('').filter((e, i, niz) => {
+    if (i <= 2 || i > niz.length - 4) return e
+})
+
+
+console.log(bla);
+
+console.log(bla.length);

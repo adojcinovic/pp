@@ -29,15 +29,15 @@ let glasanje = voters.filter(function (e) {
 const array1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 
-console.log(array1.reduce(function (acc, e) {
-    if (e > 5) acc.push(e)
-    return acc
-}, [])
-);
+// console.log(array1.reduce(function (acc, e) {
+//     if (e > 5) acc.push(e)
+//     return acc
+// }, [])
+// );
 
 var array = [{ a: 2, b: true }, { a: 4, b: false }, { a: 3, b: true }, { a: 0, b: false }]
 
-console.log(array.filter(e => e.a && e.b));
+// console.log(array.filter(e => e.a && e.b));
 
 var k = 'kurcina'
 
@@ -47,5 +47,4 @@ function transform(string) {
 
 k = transform(k)
 
-console.log(k);
-
+// console.log(k);
